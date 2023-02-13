@@ -8,6 +8,8 @@ public class Pessoa {
     private final String nome;
     private final BigDecimal renda;
     private final LocalDate dataNascimento;
+
+    private int pontos;
     
     private final List<Pessoa> dependentes;
 
@@ -16,10 +18,19 @@ public class Pessoa {
         this.renda = renda;
         this.dataNascimento = dataNascimento;
         this.dependentes = dependentes;
+        this.pontos = 0;
     }
 
     public BigDecimal getRenda() {
         return renda;
+    }
+
+    public int getPontos() {
+        return pontos;
+    }
+
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
     }
 
     @Override
@@ -28,8 +39,11 @@ public class Pessoa {
                 "nome='" + nome + '\'' +
                 ", renda=" + renda +
                 ", dataNascimento=" + dataNascimento +
+                ", pontos=" + pontos +
                 '}';
     }
 
-
+    public void concederPontos(int pontos) {
+        this.pontos += pontos;
+    }
 }
