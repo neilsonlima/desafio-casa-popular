@@ -83,4 +83,18 @@ class PontosServiceTest {
         assertEquals(3, pessoa.getPontos());
     }
 
+
+    @Test
+    void pontosDeveriaSerZeroParaFamiliaComNenhumDependentes() {
+
+        List<Pessoa> dependentes = new ArrayList<>();
+        dependentes.add(new Pessoa("Dependente 1", BigDecimal.ZERO, LocalDate.of(1985, 3, 10), null));
+        dependentes.add(new Pessoa("Dependente 2", BigDecimal.ZERO, LocalDate.of(1986, 8, 25), null));
+        dependentes.add(new Pessoa("Dependente 3", BigDecimal.ZERO, LocalDate.of(1987, 1, 6), null));
+
+        var pessoa = new Pessoa("Pedro", new BigDecimal("1501"), LocalDate.of( 1978 , 6 , 7 ), dependentes);
+        service.concederPontos(pessoa, new Dependentes());
+        assertEquals(0, pessoa.getPontos());
+    }
+
 }
