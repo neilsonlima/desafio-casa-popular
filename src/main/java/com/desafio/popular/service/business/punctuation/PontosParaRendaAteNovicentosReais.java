@@ -1,4 +1,4 @@
-package com.desafio.popular.service.business.punctuation.familyincome;
+package com.desafio.popular.service.business.punctuation;
 
 import com.desafio.popular.model.Pessoa;
 
@@ -10,7 +10,7 @@ public class PontosParaRendaAteNovicentosReais extends PontosParaRenda{
         super(proximo);
     }
 
-    public void efetuarConcede(Pessoa pessoa){
+    public void efetuarConceder(Pessoa pessoa){
         pessoa.concederPontos(5);
     }
 

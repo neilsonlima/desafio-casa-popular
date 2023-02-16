@@ -1,8 +1,8 @@
 package com.desafio.popular.service;
 
 import com.desafio.popular.model.Pessoa;
-import com.desafio.popular.service.business.punctuation.dependents.Dependentes;
-import com.desafio.popular.service.business.punctuation.familyincome.RendaFamiliar;
+import com.desafio.popular.service.business.punctuation.Dependentes;
+import com.desafio.popular.service.business.punctuation.RendaFamiliar;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,7 +1,6 @@
 package com.desafio.popular.service.business.punctuation;
 
 import com.desafio.popular.model.Pessoa;
-import com.desafio.popular.service.business.punctuation.familyincome.PontosParaRenda;
 
 public class SemPontos extends PontosParaRenda {
 
@@ -9,7 +8,7 @@ public class SemPontos extends PontosParaRenda {
         super(null);
     }
 
-    public void efetuarConcede(Pessoa pessoa){
+    public void efetuarConceder(Pessoa pessoa){
         pessoa.concederPontos(0);
     }
 

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Pessoa {
     private final String nome;
@@ -60,5 +61,13 @@ public class Pessoa {
         final LocalDate dataAtual = LocalDate.now();
         final Period periodo = Period.between(getDataNascimento(), dataAtual);
         return periodo.getYears();
+    }
+
+    public int getQdeMenoresDeDezoitoAnos(){
+        return getDependentes()
+                .stream()
+                .filter(dependente -> dependente.getIdade() < 18)
+                .collect(Collectors.toList())
+                .size();
     }
 }

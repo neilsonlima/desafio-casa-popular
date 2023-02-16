@@ -1,4 +1,4 @@
-package com.desafio.popular.service.business.punctuation.familyincome;
+package com.desafio.popular.service.business.punctuation;
 
 import com.desafio.popular.model.Pessoa;
 
@@ -12,11 +12,11 @@ public abstract class PontosParaRenda {
 
     public void conceder(Pessoa pessoa){
         if(deveAplicar(pessoa)){
-            efetuarConcede(pessoa);
+            efetuarConceder(pessoa);
         }else {
             proximo.conceder(pessoa);
         }
     }
-    protected abstract void efetuarConcede(Pessoa pessoa);
+    protected abstract void efetuarConceder(Pessoa pessoa);
     protected abstract boolean deveAplicar(Pessoa pessoa);
 }
