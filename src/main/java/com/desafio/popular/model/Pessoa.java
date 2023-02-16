@@ -6,7 +6,7 @@ import java.time.Period;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Pessoa {
+public class Pessoa implements Comparable<Pessoa>{
     private final String nome;
     private final BigDecimal renda;
     private final LocalDate dataNascimento;
@@ -33,10 +33,6 @@ public class Pessoa {
 
     public int getPontos() {
         return pontos;
-    }
-
-    public void setPontos(int pontos) {
-        this.pontos = pontos;
     }
 
     public List<Pessoa> getDependentes() {
@@ -69,5 +65,11 @@ public class Pessoa {
                 .filter(dependente -> dependente.getIdade() < 18)
                 .collect(Collectors.toList())
                 .size();
+    }
+
+    @Override
+    public int compareTo(Pessoa pessoa) {
+        int compareage = pessoa.getPontos();
+        return compareage - this.pontos;
     }
 }

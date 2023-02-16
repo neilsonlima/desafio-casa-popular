@@ -6,7 +6,6 @@ public class PontosParaMaisDeTresDependentesMenoresDeDezoitoAnos extends PontosP
     public PontosParaMaisDeTresDependentesMenoresDeDezoitoAnos(PontosParaRenda proximo) {
         super(proximo);
     }
-
     public void efetuarConceder(Pessoa pessoa){
         pessoa.concederPontos(3);
     }
