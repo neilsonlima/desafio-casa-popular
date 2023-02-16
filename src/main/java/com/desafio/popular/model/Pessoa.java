@@ -2,6 +2,7 @@ package com.desafio.popular.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 
 public class Pessoa {
@@ -25,12 +26,20 @@ public class Pessoa {
         return renda;
     }
 
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
     public int getPontos() {
         return pontos;
     }
 
     public void setPontos(int pontos) {
         this.pontos = pontos;
+    }
+
+    public List<Pessoa> getDependentes() {
+        return dependentes;
     }
 
     @Override
@@ -45,5 +54,11 @@ public class Pessoa {
 
     public void concederPontos(int pontos) {
         this.pontos += pontos;
+    }
+
+    public int getIdade() {
+        final LocalDate dataAtual = LocalDate.now();
+        final Period periodo = Period.between(getDataNascimento(), dataAtual);
+        return periodo.getYears();
     }
 }
